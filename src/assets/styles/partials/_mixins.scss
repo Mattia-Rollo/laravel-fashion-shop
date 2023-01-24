@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
 }
-@mixin dflex_center_col {
+@mixin mk_dflex_center_col {
     display: flex;
     flex-direction: column;
     justify-content: center;
