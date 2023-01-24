@@ -1,4 +1,5 @@
 <template>
+  <BestSellerComponent />
   <HomeHeroComponent />
   <HomeDeliveryComponent />
 </template>
@@ -6,11 +7,13 @@
 <script>
 import { store } from "../store";
 import axios from "axios";
+import BestSellerComponent from "../components/BestSellerComponent.vue";
 import HomeHeroComponent from "../components/HomeHeroComponent.vue";
 import HomeDeliveryComponent from "../components/HomeDeliveryComponent.vue";
 
 export default {
   name: "HomePage",
+  components: { BestSellerComponent },
   components: {
              HomeHeroComponent,
              HomeDeliveryComponent,
