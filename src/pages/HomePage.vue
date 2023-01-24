@@ -1,12 +1,14 @@
 <template>
-  ciao
+  <BestSellerComponent />
 </template>
 
 <script>
 import { store } from "../store";
 import axios from "axios";
+import BestSellerComponent from "../components/BestSellerComponent.vue";
 export default {
   name: "HomePage",
+  components: { BestSellerComponent },
   data() {
     return {
       store,
@@ -25,6 +27,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
