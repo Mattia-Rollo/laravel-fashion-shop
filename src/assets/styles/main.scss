@@ -10,8 +10,68 @@ $fa-font-path: '../webfonts';
 // Comfortaa light 300  regular 400 medim 500 semi bold 600 bold 700 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
-
+/**************************
+    RESET
+***************************/
 body{
     background-color: bisque;
     font-family: 'Comfortaa', cursive;
+}
+*, 
+*::before, 
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+/**************************
+   GENERAL
+***************************/
+.mk_container{
+    width: 80%;
+    margin: 0 auto;
+}
+h1{
+    color: $mk_white;
+    font-weight: 700;
+    font-size: 3rem;
+}
+h2{
+    color: $mk_txt_dark_gray;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+h3{
+    color: $mk_txt_dark_gray;
+    font-weight: 600;
+    line-height: 2.8rem;
+}
+p{
+    color: $mk_txt_light_gray;
+    line-height: 2;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: $mk_txt_dark_gray;
+    font-size: .85rem;
+}
+a:hover{
+    color: $mk_white;
+}
+.mk_btn{
+    width: fit-content;
+    font-family: inherit;
+    background-color: $mk_txt_dark_gray;
+    color: $mk_white;
+    border: 4px solid $mk_white;
+    border-radius: 50px;
+    padding: .5rem 1.2rem;
+
 }
