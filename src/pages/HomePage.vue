@@ -1,7 +1,8 @@
 <template>
-  <BestSellerComponent />
   <HomeHeroComponent />
   <HomeDeliveryComponent />
+  <BestSellerComponent />
+
 </template>
 
 <script>
@@ -13,10 +14,10 @@ import HomeDeliveryComponent from "../components/HomeDeliveryComponent.vue";
 
 export default {
   name: "HomePage",
-  components: { BestSellerComponent },
   components: {
              HomeHeroComponent,
              HomeDeliveryComponent,
+             BestSellerComponent
          },
   data() {
     return {
