@@ -7,6 +7,11 @@ $fa-font-path: '../webfonts';
 
 @import 'bootstrap/scss/bootstrap';
 
+// Comfortaa light 300  regular 400 medim 500 semi bold 600 bold 700 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
 body{
-    background-color: red;
+    background-color: bisque;
+    font-family: 'Comfortaa', cursive;
 }
