@@ -50,7 +50,7 @@ export default {
 .mk_card {
   padding: 1rem;
   background-color: $mk_white;
-  box-shadow: 0px 9px 9px -2px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.35);
 }
 .card_colors_section {
   display: flex;
