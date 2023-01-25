@@ -6,23 +6,27 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <div class="row flex-nowrap overflow-hidden" id="content" ref="content">
-        <div class="col-lg-4">
+      <div
+        class="row gap-3 flex-nowrap overflow-hidden"
+        id="content"
+        ref="content"
+      >
+        <div class="my_col">
           <CardComponent />
         </div>
-        <div class="col-lg-4">
+        <div class="my_col">
           <CardComponent />
         </div>
-        <div class="col-lg-4">
+        <div class="my_col">
           <CardComponent />
         </div>
-        <div class="col-lg-4">
+        <div class="my_col">
           <CardComponent />
         </div>
-        <div class="col-lg-4">
+        <div class="my_col">
           <CardComponent />
         </div>
-        <div class="col-lg-4">
+        <div class="my_col">
           <CardComponent />
         </div>
       </div>
@@ -96,7 +100,7 @@ export default {
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
 
-#best_seller{
+#best_seller {
   margin-bottom: 3rem;
 }
 
@@ -116,27 +120,30 @@ button.mk_btn {
 button.carousel_btn_left {
   position: absolute;
   border: none;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   font-size: 2rem;
   color: $mk_txt_black;
   border-radius: 50%;
   z-index: 100;
   top: 55%;
-  left: -1.5rem;
+  left: -2rem;
   background-color: $mk_bg_mint;
 }
 button.carousel_btn_right {
   position: absolute;
   border: none;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   font-size: 2rem;
   color: $mk_txt_black;
   border-radius: 50%;
   z-index: 100;
   top: 55%;
-  right: -1.5rem;
+  right: -2rem;
   background-color: $mk_bg_mint;
+}
+.my_col {
+  width: calc((100% / 3));
 }
 </style>

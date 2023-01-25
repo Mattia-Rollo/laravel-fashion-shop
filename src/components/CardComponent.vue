@@ -43,23 +43,24 @@ export default {
 //   width: calc(100% / 3);
 // }
 .img_wrap {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   padding-bottom: 1rem;
 }
 .mk_card {
   padding: 1rem;
   background-color: $mk_white;
+  box-shadow: 0px 9px 9px -2px rgba(0, 0, 0, 0.35);
 }
 .card_colors_section {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   .hex_dot {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: $mk_bg_pink;
     border-radius: 50%;
   }
