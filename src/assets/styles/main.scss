@@ -14,7 +14,7 @@ $fa-font-path: '../webfonts';
     RESET
 ***************************/
 body{
-    background-color: grey;
+    background-color: $mk_white;
     font-family: 'Comfortaa', cursive;
 }
 ::-webkit-scrollbar{
@@ -61,7 +61,7 @@ h1{
 h2{
     color: $mk_txt_dark_gray;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 4rem;
 }
 h3{
     color: $mk_txt_dark_gray;

@@ -2,7 +2,6 @@
   <HomeHeroComponent />
   <HomeDeliveryComponent />
   <BestSellerComponent />
-
 </template>
 
 <script>
@@ -15,24 +14,14 @@ import HomeDeliveryComponent from "../components/HomeDeliveryComponent.vue";
 export default {
   name: "HomePage",
   components: {
-             HomeHeroComponent,
-             HomeDeliveryComponent,
-             BestSellerComponent
-         },
+    HomeHeroComponent,
+    HomeDeliveryComponent,
+    BestSellerComponent,
+  },
   data() {
     return {
       store,
     };
-  },
-  methods: {
-    callProducts() {
-      axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
-        console.log(res.data.results);
-      });
-    },
-  },
-  mounted() {
-    this.callProducts();
   },
 };
 </script>
