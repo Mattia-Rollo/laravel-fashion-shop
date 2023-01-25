@@ -3,7 +3,7 @@
     <div class="img_wrap">
       <img
         class="img-fluid"
-        src="../../public/cover_img_ex.jpg"
+        src="/img/cover_img_ex.jpg"
         alt="product_pic"
       />
     </div>

@@ -36,7 +36,7 @@
         .home_delivery_section_img{
             height: 100%;
             width: 50%;
-            background-image: url(../assets/img/delivery_temp.jpg);
+            background-image: url(/img/delivery_temp.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;

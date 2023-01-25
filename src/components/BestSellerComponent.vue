@@ -149,7 +149,7 @@ button.carousel_btn_right {
   border: 3px solid transparent;
 
 }
-button:hover{
+button:hover:not(.mk_btn){
   color: $mk_bg_mint;
   border: 3px solid $mk_bg_mint;
   background-color: $mk_white;

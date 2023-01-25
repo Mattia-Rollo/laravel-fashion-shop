@@ -1,7 +1,7 @@
 <template>
   <nav class="mk_container">
     <div class="mk_nav_flex">
-      <img src="/public/img/logo.png" alt="logo" class="mk_logo_nav" />
+      <img src="/img/logo.png" alt="logo" class="mk_logo_nav" />
       <ul class="mk_ul_flex">
         <li>
           <router-link :to="{ name: 'home' }" active-class="active_nav_link"

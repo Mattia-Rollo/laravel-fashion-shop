@@ -33,7 +33,7 @@
 
 .home_hero_img{
     height: 550px;
-    background-image: url(../assets/img/temp_hero.PNG);
+    background-image: url(/img/temp_hero.PNG);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -63,7 +63,7 @@
     .home_hero_highlight_img{
         height: 100%;
         width: 35%;
-        background-image: url(../assets/img/organic_materials.jpg);
+        background-image: url(/img/organic_materials.jpg);
          background-size: cover;
          background-repeat: no-repeat;
         background-position: center;
