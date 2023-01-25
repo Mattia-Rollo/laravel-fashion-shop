@@ -1,5 +1,14 @@
 <template>
-  <div>PAgina About</div>
+  <div>PAgina About
+    <ul>
+      <li>prova</li>
+      <li>prova</li>
+      <li>prova</li>
+      <li>prova</li>
+
+    </ul> 
+  
+  </div>
 </template>
 
 <script>
