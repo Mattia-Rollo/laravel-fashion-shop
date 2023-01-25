@@ -7,7 +7,7 @@
   </div>
 
   <footer>
-    <FooterComponent />
+    <!-- <FooterComponent /> -->
   </footer>
 </template>
 
