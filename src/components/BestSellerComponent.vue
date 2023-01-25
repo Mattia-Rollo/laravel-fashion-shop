@@ -96,6 +96,10 @@ export default {
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
 
+#best_seller{
+  margin-bottom: 3rem;
+}
+
 h2 {
   margin-bottom: 2rem;
 }

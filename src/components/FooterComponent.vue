@@ -38,7 +38,7 @@
         <div>Metropolitan Makeup Show LLC</div>
         <div>123 West 18th Street 8th Floor New York, NY 10011 Office</div>
         <div>212.242.1213 Fax – 212.463.7099</div>
-        <div>info@themakeupshow.com</div>
+        <div>info@glow.com</div>
       </div>
 
       <!-- <i class="fa-brands fa-twitter"></i>
@@ -72,11 +72,18 @@ export default {
 }
 
 .social-icons {
-  min-width: 50px;
-  min-height: 50px;
-  border: 1px solid $mk_white;
-  background-color: $mk_white;
+  width: 50px;
+  height: 50px;
+  padding-top: .2rem;
+  // border: 3px solid $mk_white;
+  background-color: $mk_bg_dark_pink;
   border-radius: 50%;
+  transition: all 250ms ease;
+  cursor: pointer;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 }
 
 .circle {
@@ -88,6 +95,10 @@ export default {
 
 .text-center {
   padding-top: 3.5rem;
+  color: $mk_white;
+  font-weight: 600;
+}
+i{
   color: $mk_white;
 }
 </style>

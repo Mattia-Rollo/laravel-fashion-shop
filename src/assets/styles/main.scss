@@ -80,19 +80,19 @@ ul{
 a{
     text-decoration: none;
     color: $mk_txt_dark_gray;
-    font-size: .85rem;
+    font-size: .95rem;
 }
 a:hover{
-    color: $mk_white;
+    color: $mk_txt_light_gray;
 }
 .mk_btn{
-    width: fit-content;
+    width: 220px;
     font-family: inherit;
     font-size: 1.2rem;
     background-color: $mk_txt_dark_gray;
     color: $mk_white;
     border: 4px solid $mk_white;
     border-radius: 50px;
-    padding: .5rem 1.2rem;
+    padding: .5rem 0;
 
 }

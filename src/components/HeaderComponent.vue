@@ -39,12 +39,13 @@ export default {
 @use "../assets/styles/partials/mixins" as *;
 
 .active_nav_link {
-  color: red;
+  color: $mk_white;
+  font-weight: 900;
 }
 .mk_container {
-  height: 50px;
   background-color: $mk_bg_pink;
   width: 100%;
+  padding: .2rem 0;
 }
 
 .mk_nav_flex {
@@ -55,6 +56,7 @@ export default {
 
 .mk_logo_nav {
   width: 45px;
+  padding: .25rem;
   cursor: pointer;
 }
 
@@ -66,6 +68,7 @@ export default {
   li {
     margin-left: 30px;
     cursor: pointer;
+    font-weight: 600;
   }
 }
 </style>
