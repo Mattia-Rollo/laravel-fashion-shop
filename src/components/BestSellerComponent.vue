@@ -123,12 +123,15 @@ button.carousel_btn_left {
   width: 60px;
   height: 60px;
   font-size: 2rem;
-  color: $mk_txt_black;
+  color: $mk_white;
   border-radius: 50%;
   z-index: 100;
   top: 55%;
   left: -2rem;
   background-color: $mk_bg_mint;
+  transition: all 450ms ease-in-out;
+  border: 3px solid transparent;
+
 }
 button.carousel_btn_right {
   position: absolute;
@@ -136,12 +139,22 @@ button.carousel_btn_right {
   width: 60px;
   height: 60px;
   font-size: 2rem;
-  color: $mk_txt_black;
+  color: $mk_white;
   border-radius: 50%;
   z-index: 100;
   top: 55%;
   right: -2rem;
   background-color: $mk_bg_mint;
+  transition: all 450ms ease-in-out;
+  border: 3px solid transparent;
+
+}
+button:hover{
+  color: $mk_bg_mint;
+  border: 3px solid $mk_bg_mint;
+  background-color: $mk_white;
+  transform: scale(1.1);
+
 }
 .my_col {
   width: calc((100% / 3));
