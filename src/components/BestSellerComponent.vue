@@ -7,27 +7,17 @@
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
       <div
+        v-if="store.productsArray.length > 0"
         class="row gap-3 flex-nowrap overflow-hidden"
         id="content"
         ref="content"
       >
-        <div class="my_col">
-          <CardComponent />
-        </div>
-        <div class="my_col">
-          <CardComponent />
-        </div>
-        <div class="my_col">
-          <CardComponent />
-        </div>
-        <div class="my_col">
-          <CardComponent />
-        </div>
-        <div class="my_col">
-          <CardComponent />
-        </div>
-        <div class="my_col">
-          <CardComponent />
+        <div
+          class="my_col"
+          v-for="(product, index) in store.productsArray"
+          :key="index"
+        >
+          <CardComponent :product="product" />
         </div>
       </div>
       <button class="carousel_btn_left" @click="swipeLeft">
@@ -43,6 +33,7 @@
 
 <script>
 import CardComponent from "./CardComponent.vue";
+import axios from "axios";
 import { store } from "../store";
 export default {
   name: "BestSellerComponent",
@@ -92,6 +83,15 @@ export default {
       const content = this.$refs.content;
       this.scrollTo(content, 450, 800);
     },
+    callProducts() {
+      axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
+        store.productsArray = res.data.results;
+        console.log(store.productsArray);
+      });
+    },
+  },
+  mounted() {
+    this.callProducts();
   },
 };
 </script>
@@ -108,7 +108,7 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-p{
+p {
   text-align: center;
   max-width: 640px;
 }
@@ -137,7 +137,6 @@ button.carousel_btn_left {
   background-color: $mk_bg_mint;
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
-
 }
 button.carousel_btn_right {
   position: absolute;
@@ -153,14 +152,12 @@ button.carousel_btn_right {
   background-color: $mk_bg_mint;
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
-
 }
-button:hover:not(.mk_btn){
+button:hover:not(.mk_btn) {
   color: $mk_bg_mint;
   border: 3px solid $mk_bg_mint;
   background-color: $mk_white;
   transform: scale(1.1);
-
 }
 .my_col {
   width: calc((100% / 3));
