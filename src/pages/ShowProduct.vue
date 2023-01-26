@@ -111,7 +111,7 @@ img {
   justify-content: center;
   padding: 0 20px 0 60px;
   position: relative;
-  box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
 
   p {
     font-size: 1.8rem;
@@ -138,10 +138,9 @@ img {
 .mk_shades_box {
   width: 100%;
   margin: 80px 0;
-  border-top: 1px solid $mk_txt_light_gray;
-  border-bottom: 1px solid $mk_txt_light_gray;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.35);
+  // border-top: 1px solid $mk_txt_light_gray;
+  // border-bottom: 1px solid $mk_txt_light_gray;
+  box-shadow: 0px 4px 8px 2px rgba($mk_txt_dark_gray, 0.35);
 }
 
 .mk_shades {

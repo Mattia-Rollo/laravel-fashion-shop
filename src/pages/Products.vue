@@ -41,9 +41,10 @@ export default {
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
 h2 {
-  padding: 3rem 0;
+  padding: 3rem 0 1.5rem 0;
 }
 .subtitle {
+  text-align: center;
   width: 50%;
   margin: 0 auto;
 }

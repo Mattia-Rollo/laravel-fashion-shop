@@ -58,6 +58,7 @@
     height: 590px;
     @include mk_dflex_between;
     margin-bottom: 5rem;
+    box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
 
 
     .home_hero_highlight_img{

@@ -80,6 +80,7 @@ export default {
     transition: opacity 450ms ease;
     cursor: pointer;
     transition: all 450ms ease;
+    box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
 
     &:hover{
       transform: scale(1.1);
@@ -108,7 +109,7 @@ export default {
     background-color: $mk_white;
     color: $mk_txt_dark_gray;
     font-size: 1.4rem;
-    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
     border-radius: .5rem  0  0 .5rem;
     transition: all 450ms ease;
     cursor: pointer;

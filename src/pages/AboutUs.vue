@@ -95,6 +95,7 @@ export default {
     max-width: 960px;
     background-color: $mk_bg_mint;
     @include mk_dflex_center_col;
+    box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
 
     span{
       font-size: 2.5rem;
@@ -119,6 +120,7 @@ export default {
       background-color:$mk_bg_pink;
       margin-top: -150px;
       margin-left: 8rem;
+      box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
     }
 
     img{
@@ -126,7 +128,7 @@ export default {
       height: 654px;
       margin-top: -260px;
       margin-left: -15px;
-     
+      box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
     }
   }
 

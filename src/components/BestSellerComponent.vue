@@ -1,32 +1,36 @@
 <template>
   <section id="best_seller">
-    <div class="mk_container position-relative">
+    <div class="mk_container">
       <h2 class="text-center">Best Sellers</h2>
       <p class="subtitle">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <div
-        v-if="store.productsArray.length > 0"
-        class="row gap-3 flex-nowrap overflow-hidden"
-        id="content"
-        ref="content"
-      >
+      <div class="align">
+          <button class="carousel_btn_left" @click="swipeLeft">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
         <div
-          class="my_col"
-          v-for="(product, index) in store.productsArray"
-          :key="index"
+          v-if="store.productsArray.length > 0"
+          id="content"
+          ref="content"
+          class="my_row"
         >
-          <CardComponent :product="product" />
+          <div
+            class="my_col"
+            v-for="(product, index) in store.productsArray"
+            :key="index"
+          >
+            <CardComponent :product="product" />
+          </div>
         </div>
+
+        <button class="carousel_btn_right" @click="swipeRight">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
-      <button class="carousel_btn_left" @click="swipeLeft">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <button class="carousel_btn_right" @click="swipeRight">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-    </div>
+      </div>
     <button class="mk_btn d-block m-auto">Browse All</button>
   </section>
 </template>
@@ -77,11 +81,11 @@ export default {
     },
     swipeLeft() {
       const content = this.$refs.content;
-      this.scrollTo(content, -450, 800);
+      this.scrollTo(content, -850, 800);
     },
     swipeRight() {
       const content = this.$refs.content;
-      this.scrollTo(content, 450, 800);
+      this.scrollTo(content, 850, 800);
     },
     callProducts() {
       axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
@@ -101,6 +105,8 @@ export default {
 @use "../assets/styles/partials/mixins" as *;
 
 #best_seller {
+  // max-width: 1213px;
+  // margin: 0 auto;
   margin-bottom: 3rem;
 }
 
@@ -108,23 +114,35 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-p {
+.subtitle {
+  margin: 0 auto;
   text-align: center;
   max-width: 640px;
 }
-.row {
-  padding: 2.5rem 0;
-  margin: 1.5rem 0;
-}
-.subtitle {
-  width: 50%;
+
+.my_row {
+  margin: 2rem 0;;
+  display: flex;
+  gap: 1rem;
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
+  overflow: hidden;
+  padding: 30px 0;
 }
-button.mk_btn {
-  margin-top: 2rem;
+
+.align{
+  max-width: 1330px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 button.carousel_btn_left {
-  position: absolute;
+  // position: absolute;
+  // top: 55%;
+  // left: -1rem;
   border: none;
   width: 60px;
   height: 60px;
@@ -132,14 +150,14 @@ button.carousel_btn_left {
   color: $mk_white;
   border-radius: 50%;
   z-index: 100;
-  top: 55%;
-  left: -1rem;
   background-color: $mk_bg_mint;
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
 }
 button.carousel_btn_right {
-  position: absolute;
+  // position: absolute;
+  // top: 55%;
+  // right: -1rem;
   border: none;
   width: 60px;
   height: 60px;
@@ -147,8 +165,6 @@ button.carousel_btn_right {
   color: $mk_white;
   border-radius: 50%;
   z-index: 100;
-  top: 55%;
-  right: -1rem;
   background-color: $mk_bg_mint;
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
@@ -159,7 +175,8 @@ button:hover:not(.mk_btn) {
   background-color: $mk_white;
   transform: scale(1.1);
 }
-.my_col {
-  width: calc((100% / 3));
-}
+
+
 </style>
+
+<!-- class="row gap-3 flex-nowrap overflow-hidden" -->
