@@ -3,16 +3,16 @@
     <div class="img_wrap">
       <img
         class="img-fluid"
-        src="/img/cover_img_ex.jpg"
-        alt="product_pic"
+        :src="`${store.imageBasePath}${product.cover_image}`"
+        :alt="product.slug"
       />
     </div>
     <div class="card_content">
-      <h5 class="text-center mb-3">Milani</h5>
-      <p class="text-center">Milani Cream-To-Powder MakeUp</p>
+      <h5 class="text-center mb-3">{{ product.name }}</h5>
+      <p class="text-center">{{ truncateContent(product.description) }}</p>
       <div class="price_section text-center">
         <span>Price:</span>
-        <span>$ 10.99</span>
+        <span>{{ product.price }}</span>
       </div>
       <div class="card_colors_section">
         <div class="hex_dot"></div>
@@ -28,10 +28,22 @@
 import { store } from "../store";
 export default {
   name: "CardComponent",
+  props: {
+    product: Object,
+  },
   data() {
     return {
       store,
+      contentMaxLenght: 35,
     };
+  },
+  methods: {
+    truncateContent(text) {
+      if (text.length > this.contentMaxLenght) {
+        return text.substr(0, this.contentMaxLenght) + "...";
+      }
+      return text;
+    },
   },
 };
 </script>
@@ -43,9 +55,15 @@ export default {
 //   width: calc(100% / 3);
 // }
 .img_wrap {
-  width: 70%;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   padding-bottom: 1rem;
+  overflow: hidden;
+
+  & img {
+    object-fit: cover;
+  }
 }
 .mk_card {
   padding: 1rem;
@@ -65,20 +83,20 @@ export default {
     border-radius: 50%;
   }
 }
-.card_content{
-  h5{
+.card_content {
+  h5 {
     font-size: 2rem;
     font-weight: 700;
   }
-  p{
+  p {
     font-size: 1.4rem;
   }
-  .price_section{
+  .price_section {
     font-size: 1.2rem;
     font-weight: bold;
 
-    span{
-      padding-right: .5rem;
+    span {
+      padding-right: 0.5rem;
     }
   }
 }
