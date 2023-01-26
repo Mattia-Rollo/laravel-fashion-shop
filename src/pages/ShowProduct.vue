@@ -1,66 +1,84 @@
 <template>
-
-  <h2 class="text-center py-5">Product Name</h2>
-  <div class="mk_container mk_padding_container">
-    <div class="mk_show">
-      <img src="/img/cover_img_ex.jpg" alt="Product Name">
-      <div class="mk_rect_mint">
-        <p>Brand: Nome brand prodotto</p>
-        <p>Price: Prezzo</p>
-        <div class="mk_rect_brown">
-          <!-- RETTANGOLO IN ABSOLUTE -->
+  <section v-if="singleProduct">
+    <h2 class="text-center py-5">{{ singleProduct.name }}</h2>
+    <div class="mk_container mk_padding_container">
+      <div class="mk_show">
+        <img
+          :src="`${store.imageBasePath}${singleProduct.cover_image}`"
+          :alt="singleProduct.name"
+        />
+        <div class="mk_rect_mint">
+          <p>Brand: {{ singleProduct.brand.name }}</p>
+          <p>
+            Price: {{ singleProduct.price
+            }}<span>{{ singleProduct.price_sign }}</span>
+          </p>
+          <div class="mk_rect_brown">
+            <!-- RETTANGOLO IN ABSOLUTE -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- BOX SHADES -->
-  <div class="mk_shades_box">
-    <div class="mk_container mk_shades_flex">
-      <div class="mk_shades">
-        <div class="mk_color_shades">
-          <!-- TONALITà DISPONIBILI -->
+    <!-- BOX SHADES -->
+    <div class="mk_shades_box">
+      <div class="mk_container mk_shades_flex" v-if="singleProduct.colors">
+        <div
+          class="mk_shades"
+          v-for="(color, index) in singleProduct.colors"
+          :key="index"
+        >
+          <div
+            class="mk_color_shades"
+            :style="{ backgroundColor: color.hex_value }"
+          >
+            <!-- TONALITà DISPONIBILI -->
+          </div>
+          <p>{{ color.name }}</p>
         </div>
-        <p>Nome tonalità</p>
-      </div>
-      <div class="mk_shades">
-        <div class="mk_color_shades">
-          <!-- TONALITà DISPONIBILI -->
-        </div>
-        <p>Nome tonalità</p>
-      </div>
-      <div class="mk_shades">
-        <div class="mk_color_shades">
-          <!-- TONALITà DISPONIBILI -->
-        </div>
-        <p>Nome tonalità</p>
-      </div>
-      <div class="mk_shades">
-        <div class="mk_color_shades">
-          <!-- TONALITà DISPONIBILI -->
-        </div>
-        <p>Nome tonalità</p>
       </div>
     </div>
-  </div>
-
-  <!-- BOX DESCRIZIONE -->
-  <div class="mk_description_box">
-    <div class="mk_container mk_des_padding">
-      <h3>Description</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni labore iste vel nisi mollitia id maxime. Est
-        fuga corrupti corporis quaerat magni vero possimus quasi eaque, consequatur accusamus atque deleniti
-        consequuntur beatae, dolores provident iure culpa eum autem? Ut iure quod ea porro inventore harum. Dolores
-        officia quia obcaecati quaerat.</p>
+    <!-- BOX DESCRIZIONE -->
+    <div class="mk_description_box">
+      <div class="mk_container mk_des_padding">
+        <h3>Description</h3>
+        <p>
+          {{ singleProduct.description }}
+        </p>
+      </div>
     </div>
-  </div>
-
-
+  </section>
 </template>
 
 <script>
+import axios from "axios";
+import { store } from "../store";
 export default {
   name: "ShowProduct",
+  data() {
+    return {
+      store,
+      singleProduct: null,
+    };
+  },
+  methods: {
+    callSingleProduct() {
+      axios
+        .get(`${store.apiBaseUrl}/products/${this.$route.params.slug}`)
+        .then((res) => {
+          if (res.data.success) {
+            // console.log(res.data.results);
+            this.singleProduct = res.data.results;
+          } else {
+            // console.log(this.$router);
+            this.$router.push({ name: "not-found" });
+          }
+          console.log(this.singleProduct);
+        });
+    },
+  },
+  mounted() {
+    this.callSingleProduct();
+  },
 };
 </script>
 
@@ -148,7 +166,6 @@ img {
 
 .mk_description_box {
   background-color: $mk_bg_mint;
-
 
   p {
     margin-bottom: 0;
