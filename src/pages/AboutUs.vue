@@ -45,7 +45,22 @@
       <h2>Trusted By Industry Leaders</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
       <div class="row">
-        <div class="col">
+        <div class="col-4">
+          <img src="/img/google.png" alt="">
+        </div>
+        <div class="col-4">
+          <img src="/img/google.png" alt="">
+        </div>
+        <div class="col-4">
+          <img src="/img/google.png" alt="">
+        </div>
+        <div class="col-4">
+          <img src="/img/google.png" alt="">
+        </div>
+        <div class="col-4">
+          <img src="/img/google.png" alt="">
+        </div>
+        <div class="col-4">
           <img src="/img/google.png" alt="">
         </div>
       </div>
@@ -151,9 +166,28 @@ export default {
         max-width: 265px;
         text-align: center;
       }
+      
     }
   }
   
+ }
+
+ #trusted{
+  text-align: center;
+  margin-bottom: 10rem;
+
+  p{
+    max-width: 700px;
+    margin: 2rem auto;
+  }
+  .row{
+        margin-top: 5rem;
+        gap: 4rem 0;
+
+        img{
+          width: 280px;
+        }
+      }
  }
 
 
