@@ -50,7 +50,7 @@
 .home_hero_bg{
     height: 400px;
     background: $mk_bg_pink;
-    margin-top: -52px;
+    margin-top: -55px;
 }
 .home_hero_highlight{
     // max-width: 1138px;

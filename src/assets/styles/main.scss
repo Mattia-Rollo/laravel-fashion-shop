@@ -94,5 +94,14 @@ a:hover{
     border: 4px solid $mk_white;
     border-radius: 50px;
     padding: .5rem 0;
+    transition: all 450ms ease-in-out;
 
+
+    &:hover{
+        color: $mk_txt_dark_gray;
+        border: 4px solid $mk_txt_dark_gray;
+        background-color: $mk_white;
+        font-weight: 700;
+        // transform: scale(1.1);
+    }
 }

@@ -55,6 +55,12 @@
             background-color: $mk_bg_mint;
             color: $mk_txt_dark_gray;
             font-weight: 700;
+
+            &:hover{
+                color: $mk_bg_mint;
+                border: 4px solid $mk_bg_mint;
+                background-color: $mk_white;
+            }
         }
     }
         

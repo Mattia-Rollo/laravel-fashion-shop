@@ -65,4 +65,21 @@ export default {
     border-radius: 50%;
   }
 }
+.card_content{
+  h5{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  p{
+    font-size: 1.4rem;
+  }
+  .price_section{
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    span{
+      padding-right: .5rem;
+    }
+  }
+}
 </style>

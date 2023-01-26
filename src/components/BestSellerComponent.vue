@@ -105,10 +105,16 @@ export default {
 }
 
 h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+p{
+  text-align: center;
+  max-width: 640px;
 }
 .row {
   padding: 2.5rem 0;
+  margin: 1.5rem 0;
 }
 .subtitle {
   width: 50%;
@@ -127,7 +133,7 @@ button.carousel_btn_left {
   border-radius: 50%;
   z-index: 100;
   top: 55%;
-  left: -2rem;
+  left: -1rem;
   background-color: $mk_bg_mint;
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
@@ -143,7 +149,7 @@ button.carousel_btn_right {
   border-radius: 50%;
   z-index: 100;
   top: 55%;
-  right: -2rem;
+  right: -1rem;
   background-color: $mk_bg_mint;
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
