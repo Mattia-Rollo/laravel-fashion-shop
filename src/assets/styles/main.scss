@@ -22,15 +22,14 @@ body{
 }
 ::-webkit-scrollbar-track{
    background: $mk_bg_mint;
-//    border-radius: 25vw;
-    // margin-block: .5em;
 }
 ::-webkit-scrollbar-thumb{
-   background: $mk_txt_light_gray;
+//    background: $mk_txt_light_gray;
+   background: linear-gradient( #bba12b, #87751f);
    border-radius: 25vw;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background: $mk_txt_dark_gray;
+    background: #d3b730;
 }
 *, 
 *::before, 
