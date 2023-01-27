@@ -2,7 +2,8 @@
     <section id="hero">
         <div class="home_hero_img"></div>
         <div class="home_hero_title">
-            <h1>Less Shadow, More Glow</h1>
+            <h1>Less Shadow, More<img src="/img/glow.PNG" alt="Glow"></h1>
+            
         </div>
         <div class="home_hero_bg"></div>
 
@@ -33,7 +34,7 @@
 
 .home_hero_img{
     height: 550px;
-    background-image: url(/img/temp_hero.PNG);
+    background-image: url(/img/home_hero.PNG);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -45,7 +46,13 @@
     width: 1000px;
     margin: 0 auto;
     border-radius: 15px;
-    margin-top: -50px;
+    margin-top: -70px;
+
+    img{
+        width: 20%;
+        padding-bottom: 1.8rem;
+        margin-left: 1.2rem;
+    }
 }
 .home_hero_bg{
     height: 400px;
@@ -54,7 +61,7 @@
 }
 .home_hero_highlight{
     // max-width: 1138px;
-    margin-top: -300px;
+    margin-top: -320px;
     height: 590px;
     @include mk_dflex_between;
     margin-bottom: 5rem;
