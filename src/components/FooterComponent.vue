@@ -24,7 +24,7 @@
       </div>
 
       <div class="text-center">
-        <div>&#169; 2021-2023 Glow.com</div>
+        <div>&#169; 2022-2023 Glow.com</div>
         <div>Metropolitan Makeup Show LLC</div>
         <div>123 West 18th Street 8th Floor New York, NY 10011 Office</div>
         <div>212.242.1213 Fax – 212.463.7099</div>
