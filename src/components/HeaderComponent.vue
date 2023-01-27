@@ -1,21 +1,27 @@
 <template>
   <nav class="mk_container">
     <div class="mk_nav_flex">
-      <router-link :to="{ name: 'home' }">
-        <img src="/img/logo.png" alt="logo" class="mk_logo_nav" />
-      </router-link>
+      <img src="/img/logo.png" alt="logo" class="mk_logo_nav" />
       <ul class="mk_ul_flex">
         <li>
-          <router-link :to="{ name: 'home' }" active-class="active_nav_link">Home</router-link>
+          <router-link :to="{ name: 'home' }" active-class="active_nav_link"
+            >Home</router-link
+          >
         </li>
         <li>
-          <router-link :to="{ name: 'products' }" active-class="active_nav_link">Products</router-link>
+          <router-link :to="{ name: 'products' }" active-class="active_nav_link"
+            >Products</router-link
+          >
         </li>
         <li>
-          <router-link :to="{ name: 'about' }" active-class="active_nav_link">About</router-link>
+          <router-link :to="{ name: 'about' }" active-class="active_nav_link"
+            >About</router-link
+          >
         </li>
         <li>
-          <router-link :to="{ name: 'contacts' }" active-class="active_nav_link">Contacts</router-link>
+          <router-link :to="{ name: 'contacts' }" active-class="active_nav_link"
+            >Contacts</router-link
+          >
         </li>
       </ul>
     </div>
@@ -36,7 +42,6 @@ export default {
   color: $mk_white;
   font-weight: 900;
 }
-
 .mk_container {
   background-color: $mk_bg_pink;
   width: 100%;

@@ -22,9 +22,7 @@
         </button>
       </div>
     </div>
-    <router-link :to="{ name: 'products' }">
-      <button class="mk_btn d-block m-auto">Browse All</button>
-    </router-link>
+    <button class="mk_btn d-block m-auto">Browse All</button>
   </section>
 </template>
 
