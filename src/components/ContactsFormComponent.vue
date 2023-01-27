@@ -8,39 +8,21 @@
     <div class="form_inputs">
       <div class="position-relative w-50">
         <input type="text" id="name" name="name" v-model="name" required />
-        <label id="nameLabel" for="name" :class="{ fixed_input: name.length }"
-          >Name</label
-        >
+        <label id="nameLabel" for="name" :class="{ fixed_input: name.length }">Name</label>
       </div>
-      <p
-        v-for="(error, index) in errors.name"
-        :key="index"
-        class="invalid-feedback"
-      >
+      <p v-for="(error, index) in errors.name" :key="index" class="invalid-feedback">
         {{ error }}
       </p>
       <div class="position-relative w-50">
         <input type="email" id="email" name="email" v-model="email" required />
-        <label id="mailLabel" for="email" :class="{ fixed_input: email.length }"
-          >Email Address</label
-        >
+        <label id="mailLabel" for="email" :class="{ fixed_input: email.length }">Email Address</label>
       </div>
     </div>
 
     <div class="form_textarea">
       <div class="position position-relative">
-        <textarea
-          name="message"
-          id="message"
-          v-model="message"
-          required
-        ></textarea>
-        <label
-          id="messaggeLabel"
-          for="message"
-          :class="{ fixed_textarea: message.length }"
-          >Write a message</label
-        >
+        <textarea name="message" id="message" v-model="message" required></textarea>
+        <label id="messaggeLabel" for="message" :class="{ fixed_textarea: message.length }">Write a message</label>
       </div>
     </div>
 
@@ -95,7 +77,7 @@ export default {
       });
     },
   },
-  mounted() {},
+  mounted() { },
   components: { LoaderComponent },
 };
 </script>
@@ -103,6 +85,22 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid $mk_white;
+  -webkit-text-fill-color: $mk_white;
+  -webkit-box-shadow: 0 0 0px 1000px $mk_bg_mint inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 form {
   padding: 5rem;
@@ -134,8 +132,8 @@ form {
     padding: 0.4rem;
   }
 
-  input:focus ~ label,
-  input ~ label.fixed_input {
+  input:focus~label,
+  input~label.fixed_input {
     top: 0;
     background-color: $mk_bg_mint;
   }
@@ -150,6 +148,7 @@ form {
     background-color: transparent;
     outline: none;
     border: 2px solid $mk_white;
+    color: $mk_white;
     border-radius: 10px;
     padding: 2rem;
     resize: none;
@@ -165,8 +164,8 @@ form {
     transition: top 0.3s ease;
   }
 
-  textarea:focus ~ label,
-  textarea ~ label.fixed_textarea {
+  textarea:focus~label,
+  textarea~label.fixed_textarea {
     top: -1.3rem;
     background-color: $mk_bg_mint;
   }
@@ -179,23 +178,29 @@ button.mk_btn {
   //   width: fit-content;
   //   padding: 0.5rem 1.6rem;
 }
+
 .fading-enter-active {
   animation: fading-in 0.5s;
 }
+
 .fading-leave-active {
   animation: fading-in 0.5s reverse;
 }
+
 @keyframes fading-in {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1.25);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 .delivered_wrap {
   background-color: $mk_bg_pink;
   height: 80px;
