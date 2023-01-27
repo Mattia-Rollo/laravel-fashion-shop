@@ -3,7 +3,9 @@
     <div class="mk_hero_titol_frame mk_container">
       <h2>About Glow</h2>
       <span>Lorem ipsum dolor sit amet consecteture.</span>
-      <button class="mk_btn">Browse Products</button>
+      <router-link :to="{ name: 'products' }">
+        <button class="mk_btn">Browse Products</button>
+      </router-link>
     </div>
   </section>
 
@@ -15,7 +17,9 @@
       </div>
       <div class="content">
         <h2>Treat Yourself</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
       </div>
     </div>
   </section>
@@ -43,7 +47,8 @@
   <section id="trusted">
     <div class="mk_container">
       <h2>Trusted By Industry Leaders</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+      </p>
       <div class="row">
         <div class="col-4">
           <img src="/img/dior.png" alt="">
@@ -69,7 +74,7 @@
     </div>
 
   </section>
-  
+
 </template>
 
 <script>
@@ -83,7 +88,7 @@ export default {
 @use '../assets/styles/partials/variables' as *;
 @use '../assets/styles/partials/mixins' as *;
 
-#mk_about_hero{
+#mk_about_hero {
   height: 500px;
   background-image: url(/img/about_hero.jpg);
   background-size: cover;
@@ -92,101 +97,107 @@ export default {
   @include mk_dflex_center;
 
 
-  .mk_hero_titol_frame{
+  .mk_hero_titol_frame {
     height: 340px;
     max-width: 960px;
     background-color: $mk_bg_mint;
     @include mk_dflex_center_col;
     box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
 
-    span{
+    span {
       font-size: 2.5rem;
       color: $mk_txt_light_gray;
       margin: 1rem 0 2.5rem 0;
     }
   }
 }
-#treat_yourself{
- .section_one{
-  max-width: 1160px;
-  @include mk_dflex_center;
-  margin-bottom: 8rem;
 
-  .image{
-    width: 50%;
-    
+#treat_yourself {
+  .section_one {
+    max-width: 1160px;
+    @include mk_dflex_center;
+    margin-bottom: 8rem;
 
-    .mk_hero_pink_square{
-      width: 309px;
-      height: 279px;
-      background-color:$mk_bg_pink;
-      margin-top: -150px;
-      margin-left: 8rem;
-      box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
+    .image {
+      width: 50%;
+
+
+      .mk_hero_pink_square {
+        width: 309px;
+        height: 279px;
+        background-color: $mk_bg_pink;
+        margin-top: -150px;
+        margin-left: 8rem;
+        box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
+      }
+
+      img {
+        // width: 436px;
+        height: 654px;
+        margin-top: -260px;
+        margin-left: -15px;
+        box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
+      }
     }
 
-    img{
-      // width: 436px;
-      height: 654px;
-      margin-top: -260px;
-      margin-left: -15px;
-      box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
+    .content {
+      width: 50%;
+      text-align: center;
+
+      p {
+        text-align: justify;
+        margin-top: 3rem;
+      }
     }
   }
-
-  .content{
-    width: 50%;
-    text-align: center;
-
-    p{
-      text-align: justify;
-      margin-top: 3rem;
-    }
-  }
- }
 }
-#shop{
+
+#shop {
   width: 100%;
   height: 500px;
   background-color: $mk_bg_brown;
   @include mk_dflex_center;
   margin-bottom: 8rem;
 
-  
-  .mk_container{
+
+  .mk_container {
     @include mk_dflex_between;
-    .item{
+
+    .item {
       @include mk_dflex_center_col;
 
-      img{
+      img {
         width: 148px;
       }
-      h4{
+
+      h4 {
         margin: 2rem 0 1rem 0;
         color: $mk_txt_dark_gray;
         font-weight: 700;
       }
-      p{
+
+      p {
         max-width: 265px;
         text-align: center;
       }
-      
+
     }
   }
-  
- }
 
- #trusted{
+}
+
+#trusted {
   text-align: center;
   margin-bottom: 10rem;
 
-  p{
+  p {
     max-width: 700px;
     margin: 2rem auto;
   }
-  .row{
-        margin-top: 5rem;
-        gap: 4rem 0;
+
+  .row {
+    margin-top: 5rem;
+    gap: 4rem 0;
 
         img{
           width: 280px;

@@ -26,11 +26,11 @@ body{
     // margin-block: .5em;
 }
 ::-webkit-scrollbar-thumb{
-   background: $mk_bg_pink;
+   background: $mk_txt_light_gray;
    border-radius: 25vw;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background: $mk_bg_dark_pink;
+    background: $mk_txt_dark_gray;
 }
 *, 
 *::before, 

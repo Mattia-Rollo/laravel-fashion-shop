@@ -32,6 +32,7 @@ export default {
   },
   mounted() {
     this.callProducts();
+    window.scrollTo(0, 0);
   },
   components: { ProductsListComponent },
 };
@@ -40,9 +41,11 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
+
 h2 {
   padding: 3rem 0 1.5rem 0;
 }
+
 .subtitle {
   text-align: center;
   width: 50%;

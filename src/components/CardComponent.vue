@@ -1,11 +1,7 @@
 <template>
   <div class="mk_card">
     <div class="img_wrap">
-      <img
-        class="img-fluid"
-        :src="`${store.imageBasePath}${product.cover_image}`"
-        :alt="product.slug"
-      />
+      <img class="img-fluid" :src="`${store.imageBasePath}${product.cover_image}`" :alt="product.slug" />
     </div>
     <div class="card_content">
       <h5>{{ product.name }}</h5>
@@ -55,16 +51,20 @@ export default {
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
 
-.mk_card{
+.mk_card {
   width: 355px;
   height: 466px;
   background-color: $mk_white;
   @include mk_dflex_center_col;
   border-radius: 5px;
   box-shadow: 0px 4px 8px -2px rgba($mk_txt_dark_gray, 0.35);
+  transition: all 0.7s ease-in-out;
 
+  &:hover {
+    transform: scale(1.05);
+  }
 
-  .img_wrap{
+  .img_wrap {
     width: 267px;
     height: 267px;
     // width: 355px;
@@ -75,28 +75,32 @@ export default {
     border-radius: 5px;
     margin-bottom: 1.2rem;
 
-    img{
-      transform: scale(.55);
+    img {
+      transform: scale(0.7);
     }
   }
-  .card_content{
-     text-align: center;
-       h5 {
-          font-size: 1.5rem;
-          font-weight: 700;
-        }
-        p {
-          font-size: 1.2rem;
-          margin: .5rem 0;
-        }
-        .price_section {
-          font-size: 1.1rem;
-          font-weight: bold;
 
-          span {
-            padding-left: 0.3rem;
-          }
-        }
+  .card_content {
+    text-align: center;
+
+    h5 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: .5rem 0;
+    }
+
+    .price_section {
+      font-size: 1.1rem;
+      font-weight: bold;
+
+      span {
+        padding-left: 0.3rem;
+      }
+    }
 
   }
 }

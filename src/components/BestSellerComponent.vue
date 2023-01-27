@@ -13,7 +13,9 @@
 
         <div v-if="store.productsArray.length > 0" id="content" ref="content" class="my_row">
           <div class="my_col" v-for="(product, index) in store.productsArray" :key="index">
-            <CardComponent :product="product" />
+            <router-link :to="{ name: 'showproduct', params: { slug: product.slug } }">
+              <CardComponent :product="product" />
+            </router-link>
           </div>
         </div>
 

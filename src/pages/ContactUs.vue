@@ -40,6 +40,9 @@ export default {
     };
   },
   components: { ContactsFormComponent },
+  mounted() {
+    window.scrollTo(0, 0);
+  }
 };
 </script>
 
@@ -50,15 +53,18 @@ export default {
 h2 {
   padding: 2rem 0;
 }
+
 h5 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .contact_info {
   display: flex;
   justify-content: space-between;
   margin-top: 4rem;
 }
+
 .text-decoration-underline:hover {
   cursor: pointer;
 }
