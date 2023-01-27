@@ -69,6 +69,7 @@ export default {
   },
   mounted() {
     this.callSingleProduct();
+    window.scrollTo(0, 0);
   },
 };
 </script>
