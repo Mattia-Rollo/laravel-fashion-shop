@@ -66,5 +66,8 @@ export default {
     cursor: pointer;
     font-weight: 600;
   }
+  a:hover{
+      color: $mk_white;
+    }
 }
 </style>
