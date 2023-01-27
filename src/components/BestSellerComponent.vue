@@ -7,21 +7,12 @@
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
       <div class="align">
-          <button class="carousel_btn_left" @click="swipeLeft">
+        <button class="carousel_btn_left" @click="swipeLeft">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
 
-        <div
-          v-if="store.productsArray.length > 0"
-          id="content"
-          ref="content"
-          class="my_row"
-        >
-          <div
-            class="my_col"
-            v-for="(product, index) in store.productsArray"
-            :key="index"
-          >
+        <div v-if="store.productsArray.length > 0" id="content" ref="content" class="my_row">
+          <div class="my_col" v-for="(product, index) in store.productsArray" :key="index">
             <CardComponent :product="product" />
           </div>
         </div>
@@ -30,7 +21,7 @@
           <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
-      </div>
+    </div>
     <button class="mk_btn d-block m-auto">Browse All</button>
   </section>
 </template>
@@ -81,11 +72,11 @@ export default {
     },
     swipeLeft() {
       const content = this.$refs.content;
-      this.scrollTo(content, -850, 800);
+      this.scrollTo(content, -1113, 800);
     },
     swipeRight() {
       const content = this.$refs.content;
-      this.scrollTo(content, 850, 800);
+      this.scrollTo(content, 1113, 800);
     },
     callProducts() {
       axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
@@ -121,24 +112,26 @@ h2 {
 }
 
 .my_row {
-  margin: 2rem 0;;
+  // margin: 2rem 0;
+
   display: flex;
   gap: 1rem;
-  max-width: 1100px;
+  max-width: 1110px;
   width: 100%;
-  margin: 0 auto;
+  // margin: 0 auto;
   overflow: hidden;
-  padding: 30px 0;
+  padding: 30px 5px;
 }
 
-.align{
+.align {
   max-width: 1330px;
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
+
 button.carousel_btn_left {
   // position: absolute;
   // top: 55%;
@@ -154,6 +147,7 @@ button.carousel_btn_left {
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
 }
+
 button.carousel_btn_right {
   // position: absolute;
   // top: 55%;
@@ -169,14 +163,13 @@ button.carousel_btn_right {
   transition: all 450ms ease-in-out;
   border: 3px solid transparent;
 }
+
 button:hover:not(.mk_btn) {
   color: $mk_bg_mint;
   border: 3px solid $mk_bg_mint;
   background-color: $mk_white;
   transform: scale(1.1);
 }
-
-
 </style>
 
 <!-- class="row gap-3 flex-nowrap overflow-hidden" -->
