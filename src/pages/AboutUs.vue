@@ -46,23 +46,25 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
       <div class="row">
         <div class="col-4">
-          <img src="/img/google.png" alt="">
+          <img src="/img/dior.png" alt="">
         </div>
         <div class="col-4">
-          <img src="/img/google.png" alt="">
+          <img src="/img/chanel.png" alt="">
         </div>
         <div class="col-4">
-          <img src="/img/google.png" alt="">
+          <img src="/img/rimmel.png" alt="">
+        </div>
+       
+        <div class="col-4">
+          <img src="/img/max_factor.png" alt="">
         </div>
         <div class="col-4">
-          <img src="/img/google.png" alt="">
+          <img src="/img/maybelline.png" alt="">
         </div>
         <div class="col-4">
-          <img src="/img/google.png" alt="">
+          <img src="/img/loreal.png" alt="">
         </div>
-        <div class="col-4">
-          <img src="/img/google.png" alt="">
-        </div>
+       
       </div>
     </div>
 
@@ -188,6 +190,7 @@ export default {
 
         img{
           width: 280px;
+          opacity: .6;
         }
       }
  }
