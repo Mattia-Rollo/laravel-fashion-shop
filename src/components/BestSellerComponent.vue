@@ -79,7 +79,7 @@ export default {
       this.scrollTo(content, 1113, 800);
     },
     callProducts() {
-      axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
+      axios.get(`${this.store.apiBaseUrl}/randomproducts`).then((res) => {
         store.productsArray = res.data.results;
         console.log(store.productsArray);
       });
