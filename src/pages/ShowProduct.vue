@@ -3,14 +3,12 @@
     <h2 class="text-center py-5">{{ singleProduct.name }}</h2>
     <div class="mk_container mk_padding_container">
       <div class="mk_show">
-        <img
-          :src="`${store.imageBasePath}${singleProduct.cover_image}`"
-          :alt="singleProduct.name"
-        />
+        <img :src="`${store.imageBasePath}${singleProduct.cover_image}`" :alt="singleProduct.name" />
         <div class="mk_rect_mint">
           <p>Brand: {{ singleProduct.brand.name }}</p>
           <p>
-            Price: {{ singleProduct.price
+            Price: {{
+              singleProduct.price
             }}<span>{{ singleProduct.price_sign }}</span>
           </p>
           <div class="mk_rect_brown">
@@ -22,15 +20,8 @@
     <!-- BOX SHADES -->
     <div class="mk_shades_box">
       <div class="mk_container mk_shades_flex" v-if="singleProduct.colors">
-        <div
-          class="mk_shades"
-          v-for="(color, index) in singleProduct.colors"
-          :key="index"
-        >
-          <div
-            class="mk_color_shades"
-            :style="{ backgroundColor: color.hex_value }"
-          >
+        <div class="mk_shades" v-for="(color, index) in singleProduct.colors" :key="index">
+          <div class="mk_color_shades" :style="{ backgroundColor: color.hex_value }">
             <!-- TONALITà DISPONIBILI -->
           </div>
           <p>{{ color.name }}</p>
@@ -133,6 +124,7 @@ img {
 
 .mk_shades_flex {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .mk_shades_box {
