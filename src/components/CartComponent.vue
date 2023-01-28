@@ -1,7 +1,7 @@
 <template>
   <div class="shopping_cart">
     <div class="mk_container">
-      <div class="py-2 fs-3 text-end" @click="store.openCart = true">
+      <div class="py-2 fs-3 text-end" @click="store.openCart = !store.openCart">
         <i class="fa-solid fa-circle-xmark"></i>
       </div>
       <h6>Shopping Cart</h6>
