@@ -26,11 +26,15 @@ export default {
     callProducts() {
       axios.get(`${this.store.apiBaseUrl}/products`).then((res) => {
         store.productsArray = res.data.results;
-        console.log(store.productsArray);
+        // console.log(res.data.results);
       });
     },
   },
   mounted() {
+    
+    this.store.getTypes();
+  },
+  created(){
     this.callProducts();
   },
   components: { ProductsListComponent },
