@@ -1,30 +1,30 @@
 <template>
   <section id="contacts">
     <div class="mk_container">
-      <h2 class="text-center">Drop Us a Message</h2>
+      <h2 class="text-center hidden">Drop Us a Message</h2>
       <div class="contact_form">
         <ContactsFormComponent />
       </div>
-      <div class="contact_info">
-        <div class="contact_info_inner">
+      <div class="contact_info hidden">
+        <div class="contact_info_inner hidden">
           <h5>Location</h5>
-          <p class="mb-0">22 Div Mountain,</p>
-          <p>San Francisco, California</p>
+          <p class="mb-0">23 West 18th Street 8th Floor,</p>
+          <p>New York, NY</p>
         </div>
-        <div class="contact_info_inner">
+        <div class="contact_info_inner hidden">
           <h5>Phone</h5>
-          <p class="text-decoration-underline">+8801740376995</p>
+          <p class="underline">212.242.1213</p>
         </div>
-        <div class="contact_info_inner">
+        <div class="contact_info_inner hidden">
           <h5>Email</h5>
-          <p class="text-decoration-underline">mail@domain.com</p>
+          <p class="underline">info@glow.com</p>
         </div>
-        <div class="contact_info_inner">
+        <div class="contact_info_inner hidden">
           <h5>Hours</h5>
-          <p>Everyday: 8am-5pm</p>
+          <p>Everyday : 8am - 5pm</p>
         </div>
       </div>
-      <h2 class="text-center">Subscribe Our Newsletter</h2>
+      <!-- <h2 class="text-center">Subscribe Our Newsletter</h2> -->
     </div>
   </section>
 </template>
@@ -40,6 +40,10 @@ export default {
     };
   },
   components: { ContactsFormComponent },
+  mounted() {
+    window.scrollTo(0, 0);
+    store.showitems();
+  },
 };
 </script>
 
@@ -47,19 +51,29 @@ export default {
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
 
-h2 {
-  padding: 2rem 0;
-}
-h5 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-.contact_info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4rem;
-}
-.text-decoration-underline:hover {
-  cursor: pointer;
+#contacts {
+  margin-bottom: 5rem;
+
+  h2 {
+    margin: 3rem 0;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $mk_txt_dark_gray;
+  }
+
+  .contact_info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+
+  .underline:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
 </style>

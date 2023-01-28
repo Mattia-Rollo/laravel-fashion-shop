@@ -2,48 +2,34 @@
   <div class="mk_container">
     <div class="mk_footer">
       <div class="d-flex justify-content-center">
-        <div
-          class="social-icons d-flex justify-content-center align-items-center mx-2"
-        >
+        <div class="social-icons d-flex justify-content-center align-items-center mx-2">
           <a href="#"><i class="fa-brands fa-facebook-f fa-2xl"></i></a>
         </div>
 
-        <div
-          class="social-icons d-flex justify-content-center align-items-center mx-2"
-        >
+        <div class="social-icons d-flex justify-content-center align-items-center mx-2">
           <a href="#"><i class="fa-brands fa-instagram fa-2xl"></i></a>
         </div>
 
-        <div
-          class="social-icons d-flex justify-content-center align-items-center mx-2"
-        >
+        <div class="social-icons d-flex justify-content-center align-items-center mx-2">
           <a href="#"><i class="fa-brands fa-twitter fa-2xl"></i></a>
         </div>
 
-        <div
-          class="social-icons d-flex justify-content-center align-items-center mx-2"
-        >
+        <div class="social-icons d-flex justify-content-center align-items-center mx-2">
           <a href="#"><i class="fa-brands fa-linkedin-in fa-2xl"></i></a>
         </div>
 
-        <div
-          class="social-icons d-flex justify-content-center align-items-center mx-2"
-        >
+        <div class="social-icons d-flex justify-content-center align-items-center mx-2">
           <a href="#"><i class="fa-brands fa-pinterest fa-2xl"></i></a>
         </div>
       </div>
 
       <div class="text-center">
-        <div>&#169; 2021-2023 Glow.com</div>
+        <div>&#169; 2022-2023 Glow.com</div>
         <div>Metropolitan Makeup Show LLC</div>
         <div>123 West 18th Street 8th Floor New York, NY 10011 Office</div>
         <div>212.242.1213 Fax – 212.463.7099</div>
         <div>info@glow.com</div>
       </div>
-
-      <!-- <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-pinterest"></i> -->
     </div>
   </div>
 </template>
@@ -81,7 +67,7 @@ export default {
   transition: all 250ms ease;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
 }
@@ -98,7 +84,8 @@ export default {
   color: $mk_white;
   font-weight: 600;
 }
-i{
+
+i {
   color: $mk_white;
 }
 </style>

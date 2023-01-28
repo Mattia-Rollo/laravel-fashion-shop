@@ -8,10 +8,13 @@
           :alt="singleProduct.name"
         />
         <div class="mk_rect_mint">
-          <p>Brand: {{ singleProduct.brand.name }}</p>
+          <p class="text-capitalize">
+            <span class="mk_span">Brand:</span> {{ singleProduct.brand.name }}
+          </p>
           <p>
-            Price: {{ singleProduct.price
-            }}<span>{{ singleProduct.price_sign }}</span>
+            <span class="mk_span">Price:</span>
+            <span>{{ singleProduct.price_sign }}</span>
+            {{ singleProduct.price }}
           </p>
           <div class="mk_rect_brown">
             <!-- RETTANGOLO IN ABSOLUTE -->
@@ -78,6 +81,7 @@ export default {
   },
   mounted() {
     this.callSingleProduct();
+    window.scrollTo(0, 0);
   },
 };
 </script>
@@ -100,6 +104,10 @@ img {
 .mk_show {
   @include mk_dflex_between;
   width: 1000px;
+}
+
+.mk_span {
+  color: $mk_txt_light_gray;
 }
 
 .mk_rect_mint {
@@ -133,6 +141,7 @@ img {
 
 .mk_shades_flex {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .mk_shades_box {

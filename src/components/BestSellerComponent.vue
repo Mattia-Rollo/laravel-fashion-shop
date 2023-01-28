@@ -1,8 +1,8 @@
 <template>
   <section id="best_seller">
     <div class="mk_container">
-      <h2 class="text-center">Best Sellers</h2>
-      <p class="subtitle">
+      <h2 class="text-center hidden">Best Sellers</h2>
+      <p class="subtitle hidden">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -11,9 +11,22 @@
           <i class="fa-solid fa-chevron-left"></i>
         </button>
 
-        <div v-if="store.productsArray.length > 0" id="content" ref="content" class="my_row">
-          <div class="my_col" v-for="(product, index) in store.productsArray" :key="index">
-            <CardComponent :product="product" />
+        <div
+          v-if="store.productsArray.length > 0"
+          id="content"
+          ref="content"
+          class="my_row"
+        >
+          <div
+            class="my_col"
+            v-for="(product, index) in store.productsArray"
+            :key="index"
+          >
+            <router-link
+              :to="{ name: 'showproduct', params: { slug: product.slug } }"
+            >
+              <CardComponent :product="product" />
+            </router-link>
           </div>
         </div>
 
@@ -22,7 +35,9 @@
         </button>
       </div>
     </div>
-    <button class="mk_btn d-block m-auto">Browse All</button>
+    <router-link :to="{ name: 'products' }">
+      <button class="mk_btn d-block m-auto">Browse All</button>
+    </router-link>
   </section>
 </template>
 
@@ -87,6 +102,7 @@ export default {
   },
   mounted() {
     this.callProducts();
+    store.showitems();
   },
 };
 </script>
