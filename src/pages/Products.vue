@@ -32,7 +32,8 @@ export default {
   },
   mounted() {
     
-    this.store.getTypes();
+    this.store.getTexture();
+    this.store.getBrands();
   },
   created(){
     this.callProducts();

@@ -7,10 +7,18 @@ export const store = reactive({
     productsArray: [],
     isLoading: false,
     openCart: true,
+    
+    
 
-    getTypes: function(){
+    getTexture: function(){
         axios.get(`${this.apiBaseUrl}/data`).then((res)=>{
-            this.typesArray = res.data.results[0];
+            this.texturesArray = res.data.results[0];
+        })
+    },
+
+    getBrands: function(){
+        axios.get(`${this.apiBaseUrl}/data`).then((res)=>{
+            this.brandsArray = res.data.results[1];
         })
     },
 
