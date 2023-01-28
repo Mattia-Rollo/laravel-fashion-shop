@@ -104,3 +104,16 @@ a:hover{
         // transform: scale(1.1);
     }
 }
+
+// CLASSI PER EFFETTO DI ENTRATA ELEMENTI PAGINA
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(-30%);
+  }
+  .showing {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }

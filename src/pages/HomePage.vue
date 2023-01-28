@@ -23,11 +23,9 @@ export default {
     };
   },
   mounted() {
-    window.scrollTo(0, 0)
-  }
+    window.scrollTo(0, 0);
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

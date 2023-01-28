@@ -3,13 +3,18 @@
     <h2 class="text-center py-5">{{ singleProduct.name }}</h2>
     <div class="mk_container mk_padding_container">
       <div class="mk_show">
-        <img :src="`${store.imageBasePath}${singleProduct.cover_image}`" :alt="singleProduct.name" />
+        <img
+          :src="`${store.imageBasePath}${singleProduct.cover_image}`"
+          :alt="singleProduct.name"
+        />
         <div class="mk_rect_mint">
-          <p class="text-capitalize"><span class="mk_span">Brand:</span> {{ singleProduct.brand.name }}</p>
+          <p class="text-capitalize">
+            <span class="mk_span">Brand:</span> {{ singleProduct.brand.name }}
+          </p>
           <p>
-            <span class="mk_span">Price:</span> <span>{{ singleProduct.price_sign }}</span> {{
-              singleProduct.price
-            }}
+            <span class="mk_span">Price:</span>
+            <span>{{ singleProduct.price_sign }}</span>
+            {{ singleProduct.price }}
           </p>
           <div class="mk_rect_brown">
             <!-- RETTANGOLO IN ABSOLUTE -->
@@ -20,8 +25,15 @@
     <!-- BOX SHADES -->
     <div class="mk_shades_box">
       <div class="mk_container mk_shades_flex" v-if="singleProduct.colors">
-        <div class="mk_shades" v-for="(color, index) in singleProduct.colors" :key="index">
-          <div class="mk_color_shades" :style="{ backgroundColor: color.hex_value }">
+        <div
+          class="mk_shades"
+          v-for="(color, index) in singleProduct.colors"
+          :key="index"
+        >
+          <div
+            class="mk_color_shades"
+            :style="{ backgroundColor: color.hex_value }"
+          >
             <!-- TONALITà DISPONIBILI -->
           </div>
           <p>{{ color.name }}</p>

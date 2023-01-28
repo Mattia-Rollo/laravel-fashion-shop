@@ -1,25 +1,25 @@
 <template>
   <section id="contacts">
     <div class="mk_container">
-      <h2 class="text-center">Drop Us a Message</h2>
+      <h2 class="text-center hidden">Drop Us a Message</h2>
       <div class="contact_form">
         <ContactsFormComponent />
       </div>
-      <div class="contact_info">
-        <div class="contact_info_inner">
+      <div class="contact_info hidden">
+        <div class="contact_info_inner hidden">
           <h5>Location</h5>
           <p class="mb-0">23 West 18th Street 8th Floor,</p>
           <p>New York, NY</p>
         </div>
-        <div class="contact_info_inner">
+        <div class="contact_info_inner hidden">
           <h5>Phone</h5>
           <p class="underline">212.242.1213</p>
         </div>
-        <div class="contact_info_inner">
+        <div class="contact_info_inner hidden">
           <h5>Email</h5>
           <p class="underline">info@glow.com</p>
         </div>
-        <div class="contact_info_inner">
+        <div class="contact_info_inner hidden">
           <h5>Hours</h5>
           <p>Everyday : 8am - 5pm</p>
         </div>
@@ -42,7 +42,8 @@ export default {
   components: { ContactsFormComponent },
   mounted() {
     window.scrollTo(0, 0);
-  }
+    store.showitems();
+  },
 };
 </script>
 
@@ -50,10 +51,10 @@ export default {
 @use "../assets/styles/partials/variables" as *;
 @use "../assets/styles/partials/mixins" as *;
 
-#contacts{
+#contacts {
   margin-bottom: 5rem;
 
-    h2 {
+  h2 {
     margin: 3rem 0;
   }
 
@@ -75,5 +76,4 @@ export default {
     cursor: pointer;
   }
 }
-
 </style>
