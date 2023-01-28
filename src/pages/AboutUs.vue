@@ -1,8 +1,8 @@
 <template>
   <section id="mk_about_hero">
     <div class="mk_hero_titol_frame mk_container">
-      <h2>About Glow</h2>
-      <span>Lorem ipsum dolor sit amet consecteture.</span>
+      <h2 class="hidden">About Glow</h2>
+      <span class="hidden">Lorem ipsum dolor sit amet consecteture.</span>
       <router-link :to="{ name: 'products' }">
         <button class="mk_btn">Browse Products</button>
       </router-link>
@@ -13,13 +13,16 @@
     <div class="mk_container section_one">
       <div class="image">
         <div class="mk_hero_pink_square"></div>
-        <img src="/img/about_model.jpg" alt="glow_model">
+        <img src="/img/about_model.jpg" alt="glow_model" />
       </div>
       <div class="content">
-        <h2>Treat Yourself</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.</p>
+        <h2 class="hidden">Treat Yourself</h2>
+        <p class="hidden">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
       </div>
     </div>
   </section>
@@ -27,66 +30,84 @@
   <section id="shop">
     <div class="mk_container">
       <div class="item">
-        <img src="/img/plastic-bag.png" alt="recicled plastic bag">
+        <img src="/img/plastic-bag.png" alt="recicled plastic bag" />
         <h4>Easy to Shop</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt
+        </p>
       </div>
       <div class="item">
-        <img src="/img/cosmetics.png" alt="recicled plastic bag">
+        <img src="/img/cosmetics.png" alt="recicled plastic bag" />
         <h4>Best Brands</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt
+        </p>
       </div>
       <div class="item">
-        <img src="/img/make-up.png" alt="recicled plastic bag">
+        <img src="/img/make-up.png" alt="recicled plastic bag" />
         <h4>Good For Skin</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt
+        </p>
       </div>
     </div>
   </section>
 
   <section id="trusted">
     <div class="mk_container">
-      <h2>Trusted By Industry Leaders</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-      </p>
-      <div class="row">
+      <div class="hidden">
+        <h2>Trusted By Industry Leaders</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore.
+        </p>
+      </div>
+      <div class="row hidden">
         <div class="col-4">
-          <img src="/img/dior.png" alt="">
+          <img src="/img/dior.png" alt="" />
         </div>
         <div class="col-4">
-          <img src="/img/chanel.png" alt="">
+          <img src="/img/chanel.png" alt="" />
         </div>
         <div class="col-4">
-          <img src="/img/rimmel.png" alt="">
+          <img src="/img/rimmel.png" alt="" />
         </div>
-       
+
         <div class="col-4">
-          <img src="/img/max_factor.png" alt="">
-        </div>
-        <div class="col-4">
-          <img src="/img/maybelline.png" alt="">
+          <img src="/img/max_factor.png" alt="" />
         </div>
         <div class="col-4">
-          <img src="/img/loreal.png" alt="">
+          <img src="/img/maybelline.png" alt="" />
         </div>
-       
+        <div class="col-4">
+          <img src="/img/loreal.png" alt="" />
+        </div>
       </div>
     </div>
-
   </section>
-
 </template>
 
 <script>
+import { store } from "../store";
 export default {
   name: "AboutUs",
+  data() {
+    return {
+      store,
+    };
+  },
+  mounted() {
+    store.showitems();
+  },
 };
 </script>
 
-
 <style lang="scss" scoped>
-@use '../assets/styles/partials/variables' as *;
-@use '../assets/styles/partials/mixins' as *;
+@use "../assets/styles/partials/variables" as *;
+@use "../assets/styles/partials/mixins" as *;
 
 #mk_about_hero {
   height: 500px;
@@ -95,7 +116,6 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   @include mk_dflex_center;
-
 
   .mk_hero_titol_frame {
     height: 340px;
@@ -120,7 +140,6 @@ export default {
 
     .image {
       width: 50%;
-
 
       .mk_hero_pink_square {
         width: 309px;
@@ -159,7 +178,6 @@ export default {
   @include mk_dflex_center;
   margin-bottom: 8rem;
 
-
   .mk_container {
     @include mk_dflex_between;
 
@@ -180,10 +198,8 @@ export default {
         max-width: 265px;
         text-align: center;
       }
-
     }
   }
-
 }
 
 #trusted {
@@ -199,12 +215,10 @@ export default {
     margin-top: 5rem;
     gap: 4rem 0;
 
-        img{
-          width: 280px;
-          opacity: .6;
-        }
-      }
- }
-
-
+    img {
+      width: 280px;
+      opacity: 0.6;
+    }
+  }
+}
 </style>

@@ -1,8 +1,8 @@
 <template>
   <section>
     <div class="mk_container">
-      <h2 class="text-center">Our Products</h2>
-      <p class="subtitle">
+      <h2 class="text-center hidden">Our Products</h2>
+      <p class="subtitle hidden">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
@@ -33,6 +33,7 @@ export default {
   mounted() {
     this.callProducts();
     window.scrollTo(0, 0);
+    store.showitems();
   },
   components: { ProductsListComponent },
 };
