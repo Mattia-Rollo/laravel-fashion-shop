@@ -8,6 +8,12 @@ export const store = reactive({
     isLoading: false,
     openCart: true,
 
+    getTypes: function(){
+        axios.get(`${this.apiBaseUrl}/data`).then((res)=>{
+            this.typesArray = res.data.results[0];
+        })
+    },
+
     // FUNZIONE PER ANIMARE GLI ELEMENTI IN ENTRATA NELLA PAGINA
     showitems() {
         const observer = new IntersectionObserver((entries) => {
