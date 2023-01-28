@@ -31,11 +31,13 @@ export default {
     },
   },
   mounted() {
-    
+
     this.store.getTexture();
     this.store.getBrands();
+    this.store.getTypes();
+
   },
-  created(){
+  created() {
     this.callProducts();
     window.scrollTo(0, 0);
     store.showitems();

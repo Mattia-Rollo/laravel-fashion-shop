@@ -20,6 +20,11 @@ export const store = reactive({
         axios.get(`${this.apiBaseUrl}/data`).then((res)=>{
             this.brandsArray = res.data.results[1];
         })
+    }, 
+    getTypes: function(){
+      axios.get(`${this.apiBaseUrl}/data`).then((res)=>{
+          this.typesArray = res.data.results[2];
+      })
     },
 
     // FUNZIONE PER ANIMARE GLI ELEMENTI IN ENTRATA NELLA PAGINA
