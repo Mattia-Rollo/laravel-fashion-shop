@@ -5,18 +5,18 @@
 
       <div class="filters_container">
           <div class="select_box">
-            <label>Type:</label>
+            <!-- <label>Type:</label> -->
             <select name="type" id="type" v-model="searchType">
-              <option value=""></option>
+              <option value="" class="label">Type:</option>
               <option v-for="(type, index) in store.typesArray" :key="index" :value="`${type.id}`">{{ type.name }}
               </option>
             </select>
             <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="select_box">
-          <label>Brand:</label>
+          <!-- <label>Brand:</label> -->
           <select name="brand" id="brand" v-model="searchBrand">
-            <option value=""></option>
+            <option value="" class="label">Brand:</option>
             <option v-for="(brand, index) in store.brandsArray" :key="index" :value="`${brand.id}`">{{ brand.name }}
             </option>
           </select>
@@ -24,9 +24,9 @@
         </div>
       
         <div class="select_box">
-            <label>Texture:</label>
+            <!-- <label>Texture:</label> -->
             <select name="texture" id="texture" v-model="searchTexture">
-              <option value=""></option>
+              <option value="" class="label">Texture:</option>
               <option v-for="(texture, index) in store.texturesArray" :key="index" :value="`${texture.id}`">{{
                 texture.name
               }}
@@ -160,7 +160,7 @@ export default {
       outline: none;
       // box-shadow: 0 0 10px -1px $mk_txt_light_gray;
     }
-    label{
+    .label{
       position: absolute;
       top: 1.3rem;
       left: 1rem;
