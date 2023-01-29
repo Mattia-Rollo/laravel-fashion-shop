@@ -144,14 +144,16 @@ export default {
     select{
       width: 100%;
       position: relative;
-      padding: 1rem;
-      border-radius: 20px;
+      padding: .5rem 1rem;
+      border-radius: 50px;
       font-weight: 700;
       -webkit-appearance: none;
       appearance: none;
       color: $mk_txt_light_gray;
       border: 4px solid $mk_bg_mint;
       cursor: pointer;
+
+     
     }
     select::ms-expand{
       display: none;
@@ -172,10 +174,10 @@ export default {
 
     i{
       position: absolute;
-      right: 1rem;
-      top: 1.3rem;
+      right: 1.3rem;
+      top: .95rem;
       font-size: 1.2rem;
-      color: $mk_bg_mint;
+      color: $mk_bg_pink;
     }
   }
 }
@@ -183,5 +185,15 @@ export default {
   color: $mk_txt_light_gray;
 }
 
+button {
+        background-color: $mk_bg_mint;
+        color: $mk_white;
+        font-weight: 900;
 
+        &:hover {
+          color: $mk_bg_mint;
+          border: 4px solid $mk_bg_mint;
+          background-color: $mk_white;
+        }
+      }
 </style>
