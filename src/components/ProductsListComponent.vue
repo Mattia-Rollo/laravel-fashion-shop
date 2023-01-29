@@ -1,31 +1,45 @@
 <template>
   <section id="product_list">
+
     <div class="mk-container">
-      <h3>Product Name</h3>
-      <div class="row">
 
-        <select class="col-auto" name="type" id="type" v-model="searchType">
-          <option value="">Tutti i type</option>
-          <option v-for="(type, index) in store.typesArray" :key="index" :value="`${type.id}`">{{ type.name }}
-          </option>
-        </select>
-        <select class="col-auto" name="brand" id="brand" v-model="searchBrand">
-          <option value="">Tutti i Brand</option>
-          <option v-for="(brand, index) in store.brandsArray" :key="index" :value="`${brand.id}`">{{ brand.name }}
-          </option>
-        </select>
+      <div class="filters_container">
+          <div class="select_box">
+            <label>Type:</label>
+            <select name="type" id="type" v-model="searchType">
+              <option value=""></option>
+              <option v-for="(type, index) in store.typesArray" :key="index" :value="`${type.id}`">{{ type.name }}
+              </option>
+            </select>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="select_box">
+          <label>Brand:</label>
+          <select name="brand" id="brand" v-model="searchBrand">
+            <option value=""></option>
+            <option v-for="(brand, index) in store.brandsArray" :key="index" :value="`${brand.id}`">{{ brand.name }}
+            </option>
+          </select>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      
+        <div class="select_box">
+            <label>Texture:</label>
+            <select name="texture" id="texture" v-model="searchTexture">
+              <option value=""></option>
+              <option v-for="(texture, index) in store.texturesArray" :key="index" :value="`${texture.id}`">{{
+                texture.name
+              }}
+              </option>
+          </select>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      
 
-        <select class="col-auto" name="texture" id="texture" v-model="searchTexture">
-          <option value="">Tutte le Texture</option>
-          <option v-for="(texture, index) in store.texturesArray" :key="index" :value="`${texture.id}`">{{
-            texture.name
-          }}
-          </option>
-        </select>
-        <button class="justify-self-end col-auto" @click="reset()">Reset Filter</button>
-
+        <button class="mk_btn" @click="reset()">Reset Filter</button>
 
       </div>
+      
       <div class="row">
         <div class="col-lg-3 mb-4" v-for="(product, index) in findProducts" :key="index">
           <router-link :to="{ name: 'showproduct', params: { slug: product.slug } }">
@@ -111,10 +125,63 @@ export default {
 @use "../assets/styles/partials/mixins" as *;
 
 #product_list {
-  padding: 5rem 0;
+ margin: 5rem 0;
 
   .row {
     margin-top: 3rem;
   }
 }
+.filters_container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .select_box{
+    position: relative;
+    width: 220px;
+    margin-right: 1.5rem;
+
+    select{
+      width: 100%;
+      position: relative;
+      padding: 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      -webkit-appearance: none;
+      appearance: none;
+      color: $mk_txt_light_gray;
+      border: 4px solid $mk_bg_mint;
+      cursor: pointer;
+    }
+    select::ms-expand{
+      display: none;
+    }
+    select:focus{
+      outline: none;
+      // box-shadow: 0 0 10px -1px $mk_txt_light_gray;
+    }
+    label{
+      position: absolute;
+      top: 1.3rem;
+      left: 1rem;
+      z-index: 1;
+      display: inline-block;
+      font-weight: 700;
+      color: $mk_txt_light_gray;
+    }
+
+    i{
+      position: absolute;
+      right: 1rem;
+      top: 1.3rem;
+      font-size: 1.2rem;
+      color: $mk_bg_mint;
+    }
+  }
+}
+.select_box select:focus + i{
+  color: $mk_txt_light_gray;
+}
+
+
 </style>

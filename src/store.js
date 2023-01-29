@@ -39,6 +39,7 @@ export const store = reactive({
         const hiddenElements = document.querySelectorAll(".hidden");
         hiddenElements.forEach((element) => observer.observe(element));
       }
+
     
 
 });
