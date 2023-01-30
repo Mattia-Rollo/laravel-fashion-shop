@@ -133,6 +133,8 @@ h2{
             font-size: .85rem;
             color: $mk_txt_light_gray;
             font-weight: 600;
+            text-align: center;
+
         }
         .description{
             color: $mk_txt_dark_gray;
@@ -152,12 +154,17 @@ h2{
             a{
                 color: $mk_bg_dark_pink;
                 cursor: pointer;
+                transition: all 250ms ease;
+
                 i{
                 font-size: 1.5rem;
                 margin-right: 1rem;
                 }
                 .fa-github-alt{
                     font-size: 1.8rem;
+                }
+                 &:hover {
+                    transform: scale(1.1);
                 }
                
             }
