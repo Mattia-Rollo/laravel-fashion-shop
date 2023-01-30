@@ -3,10 +3,7 @@
     <h2 class="text-center py-5">{{ singleProduct.name }}</h2>
     <div class="mk_container mk_padding_container">
       <div class="mk_show">
-        <img
-          :src="`${store.imageBasePath}${singleProduct.cover_image}`"
-          :alt="singleProduct.name"
-        />
+        <img :src="`${store.imageBasePath}${singleProduct.cover_image}`" :alt="singleProduct.name" />
         <div class="mk_rect_mint">
           <p class="text-capitalize">
             <span class="mk_span">Brand:</span> {{ singleProduct.brand.name }}
@@ -29,15 +26,8 @@
     <!-- BOX SHADES -->
     <div class="mk_shades_box">
       <div class="mk_container mk_shades_flex" v-if="singleProduct.colors">
-        <div
-          class="mk_shades"
-          v-for="(color, index) in singleProduct.colors"
-          :key="index"
-        >
-          <div
-            class="mk_color_shades"
-            :style="{ backgroundColor: color.hex_value }"
-          >
+        <div class="mk_shades" v-for="(color, index) in singleProduct.colors" :key="index">
+          <div class="mk_color_shades" :style="{ backgroundColor: color.hex_value }">
             <!-- TONALITà DISPONIBILI -->
           </div>
           <p>{{ color.name }}</p>
@@ -65,18 +55,27 @@ export default {
     return {
       store,
       singleProduct: null,
+      cartData: [],
     };
   },
   methods: {
     addtoCart() {
+
       let defaultquantity = 1;
-      store.shoppingCart.push({
-        quantity: defaultquantity,
-        id: this.singleProduct.id,
-        name: this.singleProduct.name,
-        price: this.singleProduct.price,
-        price_sign: this.singleProduct.price_sign,
-      });
+
+      let cartItem = store.shoppingCart.find(i => i.id === this.singleProduct.id);
+      if (cartItem) {
+        cartItem.quantity++
+      } else {
+        store.shoppingCart.push({
+          ...this.singleProduct,
+          quantity: defaultquantity
+        })
+      }
+
+      localStorage.setItem(`cart`, JSON.stringify(store.shoppingCart));
+
+
 
       // console.log(store.shoppingCart);
     },
@@ -96,6 +95,8 @@ export default {
     },
   },
   mounted() {
+    const cartData = localStorage.getItem('cart');
+    this.cartData = cartData ? JSON.parse(cartData) : [];
     this.callSingleProduct();
     window.scrollTo(0, 0);
   },

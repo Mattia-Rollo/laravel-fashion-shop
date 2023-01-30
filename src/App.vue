@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       store,
+      cartData: []
     };
   },
   methods: {
@@ -74,6 +75,7 @@ export default {
   },
   mounted() {
     this.vueOnScroll();
+    
   },
 };
 </script>
