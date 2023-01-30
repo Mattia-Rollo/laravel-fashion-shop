@@ -1,6 +1,5 @@
 <template>
-  
-  <div class="m-auto">
+    <div class="m-auto">
     <div style="width: 100%; height: 0%; padding-bottom: 56%; position: relative">
       <iframe src="https://giphy.com/embed/g01ZnwAUvutuK8GIQn" width="100%" height="100%" style="position: absolute"
         frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -9,6 +8,7 @@
       <a href="https://giphy.com/gifs/high-quality-highqualitygifs-g01ZnwAUvutuK8GIQn"></a>
     </p>
   </div>
+    
 </template>
 
 <script>
