@@ -22,6 +22,10 @@
         </div>
       </div>
     </div>
+    <button class="d-block m-auto mk_btn" @click="addtoCart()">
+      Add to Cart
+    </button>
+
     <!-- BOX SHADES -->
     <div class="mk_shades_box">
       <div class="mk_container mk_shades_flex" v-if="singleProduct.colors">
@@ -64,6 +68,18 @@ export default {
     };
   },
   methods: {
+    addtoCart() {
+      let defaultquantity = 1;
+      store.shoppingCart.push({
+        quantity: defaultquantity,
+        id: this.singleProduct.id,
+        name: this.singleProduct.name,
+        price: this.singleProduct.price,
+        price_sign: this.singleProduct.price_sign,
+      });
+
+      // console.log(store.shoppingCart);
+    },
     callSingleProduct() {
       axios
         .get(`${store.apiBaseUrl}/products/${this.$route.params.slug}`)
@@ -75,7 +91,7 @@ export default {
             // console.log(this.$router);
             this.$router.push({ name: "not-found" });
           }
-          console.log(this.singleProduct);
+          // console.log(this.singleProduct);
         });
     },
   },
