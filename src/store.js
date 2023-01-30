@@ -8,6 +8,7 @@ export const store = reactive({
     isLoading: false,
     openCart: false,
     shoppingCart: [],
+    cartData: [],
     
 
     getTexture: function(){

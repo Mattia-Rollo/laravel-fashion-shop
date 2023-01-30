@@ -21,8 +21,8 @@
   <div class="aside_menu_shop">
     <i class="fa-brands fa-opencart" @click="store.openCart = true"></i>
     <Transition class="cart_animation">
-      <div class="cart_counter" v-if="store.shoppingCart.length > 0">
-        <span>{{ store.shoppingCart.length }}</span>
+      <div class="cart_counter" v-if="store.cartData.length > 0">
+        <span>{{ store.cartData.length }}</span>
       </div>
     </Transition>
   </div>
@@ -75,7 +75,8 @@ export default {
   },
   mounted() {
     this.vueOnScroll();
-    
+    const cartData = localStorage.getItem('cart');
+    store.cartData = cartData ? JSON.parse(cartData) : [];
   },
 };
 </script>

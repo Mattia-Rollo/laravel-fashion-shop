@@ -7,7 +7,7 @@
       <h6>Shopping Cart</h6>
       <div class="product_list mt-5">
         <div class="cart_item d-flex py-3 justify-content-between align-items-center"
-          v-for="(cartItem, index) in store.shoppingCart" :key="index">
+          v-for="(cartItem, index) in store.cartData" :key="index">
           <div>
             <p>{{ cartItem.name }}</p>
             <p>{{ cartItem.price_sign }}{{ cartItem.price }}</p>
@@ -36,12 +36,13 @@ export default {
   },
   methods: {
     removeFromCart(index) {
-      store.shoppingCart.splice(index, 1);
+      store.cartData.splice(index, 1);
+      localStorage.setItem(`cart`, JSON.stringify(store.cartData));
     },
   },
   computed: {
     cartTotal() {
-      return store.shoppingCart.reduce((a, b) => a + b.price * b.quantity, 0);
+      return store.cartData.reduce((a, b) => a + b.price * b.quantity, 0);
     },
   },
   mounted() {

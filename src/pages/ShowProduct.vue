@@ -55,7 +55,7 @@ export default {
     return {
       store,
       singleProduct: null,
-      cartData: [],
+      
     };
   },
   methods: {
@@ -63,17 +63,17 @@ export default {
 
       let defaultquantity = 1;
 
-      let cartItem = store.shoppingCart.find(i => i.id === this.singleProduct.id);
+      let cartItem = store.cartData.find(i => i.id === this.singleProduct.id);
       if (cartItem) {
         cartItem.quantity++
       } else {
-        store.shoppingCart.push({
+        store.cartData.push({
           ...this.singleProduct,
           quantity: defaultquantity
         })
       }
 
-      localStorage.setItem(`cart`, JSON.stringify(store.shoppingCart));
+      localStorage.setItem(`cart`, JSON.stringify(store.cartData));
 
 
 
@@ -95,8 +95,7 @@ export default {
     },
   },
   mounted() {
-    const cartData = localStorage.getItem('cart');
-    this.cartData = cartData ? JSON.parse(cartData) : [];
+    
     this.callSingleProduct();
     window.scrollTo(0, 0);
   },
