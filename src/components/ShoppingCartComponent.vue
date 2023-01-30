@@ -73,6 +73,7 @@ export default {
   background-color: $mk_white;
   box-shadow: -1px 1px 10px 0px $mk_txt_light_gray;
   z-index: 20;
+  color: $mk_txt_dark_gray;
 
   i {
     cursor: pointer;
