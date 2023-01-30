@@ -23,7 +23,7 @@ const router = createRouter({
             component: Products
         },
         {
-            path: '/products/:slug',
+            path: '/products/:slug',    
             name: 'showproduct',
             component: ShowProduct
         },
@@ -47,6 +47,7 @@ const router = createRouter({
             name: 'not-found',
             component: NotFound
         },
+        
 
     ]
 });
