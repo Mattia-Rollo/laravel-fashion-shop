@@ -9,7 +9,7 @@
                     </div>
                     <div class="name">Mattia Fasulo</div>
                     <div class="title">Full Stack</div>
-                    <div class="description">description</div>
+                    <div class="description">I know that i don't know, but i can fly</div>
                     <div class="links">
                         <a href="https://github.com/Mattia-Fasulo" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
                         <a href="https://www.linkedin.com/in/mattia-fasulo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="name">Gianfranco Ghiani</div>
                     <div class="title">Full Stack</div>
-                    <div class="description">Il più forte (e anche modesto)</div>
+                    <div class="description">The Strongest</div>
                     <div class="links">
                         <a href="https://github.com/GianfrancoGhiani" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
                         <a href="https://www.linkedin.com/in/gianfranco-ghiani/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="name">Mattia Giorgetti</div>
                     <div class="title">Full Stack</div>
-                    <div class="description">description</div>
+                    <div class="description">I suck at coding ...</div>
                     <div class="links">
                         <a href="https://github.com/Mattia-Giorgetti" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
                         <a href="https://www.linkedin.com/in/mattia-giorgetti-b786a0262/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="name">Stefania Sgreva</div>
                     <div class="title">UI / UX Designer <br>Front End Developer</div>
-                    <div class="description">"Perchè lo stile è importante" cit.</div>
+                    <div class="description">Style is everything</div>
                     <div class="links">
                         <a href="https://github.com/StefaniaSgreva" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
                         <a href="https://www.linkedin.com/in/stefania-sgreva-83605383/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="name">Stefania Sperani</div>
                     <div class="title">Full Stack</div>
-                    <div class="description">description</div>
+                    <div class="description">Dattebayo</div>
                     <div class="links">
                         <a href="https://github.com/StefaniaSperani" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
                         <a href="https://www.linkedin.com/in/stefania-sperani-0670761b9/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
