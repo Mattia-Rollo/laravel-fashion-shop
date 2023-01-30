@@ -45,7 +45,7 @@
                     </div>
                     <div class="name">Mattia Rollo</div>
                     <div class="title">Full Stack</div>
-                    <div class="description">null</div>
+                    <div class="description">404 | not found</div>
                     <div class="links">
                         <a href="https://github.com/Mattia-Rollo" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
                         <a href="https://www.linkedin.com/in/mattia-rollo-056868161/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="name">Stefania Sgreva</div>
                     <div class="title">UI / UX Designer <br>Front End Developer</div>
-                    <div class="description">description</div>
+                    <div class="description">"Perchè lo stile è importante" cit.</div>
                     <div class="links">
                         <a href="https://github.com/StefaniaSgreva" target="_blank"><i class="fa-brands fa-github-alt"></i></a>
                         <a href="https://www.linkedin.com/in/stefania-sgreva-83605383/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -141,6 +141,8 @@ h2{
             margin: 1rem 0;
             width: 200px;
             margin-bottom: 3rem;
+            text-align: center;
+
         }
         .links{
             display: flex;
