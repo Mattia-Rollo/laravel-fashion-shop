@@ -5,7 +5,9 @@ import Products from './pages/Products.vue';
 import ShowProduct from './pages/ShowProduct.vue';
 import AboutUs from './pages/AboutUs.vue';
 import ContactUs from './pages/ContactUs.vue';
+import TechTeam from './pages/TechTeam.vue';
 import NotFound from './pages/NotFound.vue';
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -34,6 +36,11 @@ const router = createRouter({
             path: '/contacts',
             name: 'contacts',
             component: ContactUs
+        },
+       {
+        path: '/techteam',
+        name: 'techteam',
+        component: TechTeam
         },
         {
             path: '/:pathMatch(.*)*',

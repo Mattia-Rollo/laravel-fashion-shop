@@ -18,6 +18,9 @@
         <li>
           <router-link :to="{ name: 'contacts' }" active-class="active_nav_link">Contacts</router-link>
         </li>
+        <li>
+          <router-link :to="{ name: 'techteam' }" active-class="active_nav_link">Tech Team</router-link>
+        </li>
       </ul>
     </div>
   </nav>
