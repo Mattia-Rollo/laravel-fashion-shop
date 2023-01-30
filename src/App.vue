@@ -20,15 +20,20 @@
   </div>
   <div class="aside_menu_shop">
     <i class="fa-brands fa-opencart" @click="store.openCart = true"></i>
+    <Transition class="cart_animation">
+      <div class="cart_counter" v-if="store.cartData.length > 0">
+        <span>{{ store.cartData.length }}</span>
+      </div>
+    </Transition>
   </div>
   <Transition name="openCart">
-    <CartComponent v-if="store.openCart" />
+    <ShoppingCartComponent v-if="store.openCart" />
   </Transition>
 </template>
 
 <script>
 import { store } from "./store";
-import CartComponent from "./components/CartComponent.vue";
+import ShoppingCartComponent from "./components/ShoppingCartComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 
@@ -36,11 +41,12 @@ export default {
   components: {
     HeaderComponent,
     FooterComponent,
-    CartComponent,
+    ShoppingCartComponent,
   },
   data() {
     return {
       store,
+      cartData: []
     };
   },
   methods: {
@@ -69,6 +75,8 @@ export default {
   },
   mounted() {
     this.vueOnScroll();
+    const cartData = localStorage.getItem('cart');
+    store.cartData = cartData ? JSON.parse(cartData) : [];
   },
 };
 </script>
@@ -76,6 +84,28 @@ export default {
 <style lang="scss" scoped>
 @use "./assets/styles/partials/variables" as *;
 @use "./assets/styles/partials/mixins" as *;
+.cart_animation-enter-active,
+.cart_animation-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.cart_animation-enter-from,
+.cart_animation-leave-to {
+  opacity: 0;
+}
+.cart_counter {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: $mk_bg_pink;
+  color: $mk_white;
+  text-align: center;
+  line-height: 35px;
+  font-size: 20px;
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+}
 .openCart-enter-active {
   transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }

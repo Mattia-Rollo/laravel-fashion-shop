@@ -3,10 +3,7 @@
     <h2 class="text-center py-5">{{ singleProduct.name }}</h2>
     <div class="mk_container mk_padding_container">
       <div class="mk_show">
-        <img
-          :src="`${store.imageBasePath}${singleProduct.cover_image}`"
-          :alt="singleProduct.name"
-        />
+        <img :src="`${store.imageBasePath}${singleProduct.cover_image}`" :alt="singleProduct.name" />
         <div class="mk_rect_mint">
           <p class="text-capitalize">
             <span class="mk_span">Brand:</span> {{ singleProduct.brand.name }}
@@ -22,18 +19,15 @@
         </div>
       </div>
     </div>
+    <button class="d-block m-auto mk_btn" @click="addtoCart()">
+      Add to Cart
+    </button>
+
     <!-- BOX SHADES -->
     <div class="mk_shades_box">
       <div class="mk_container mk_shades_flex" v-if="singleProduct.colors">
-        <div
-          class="mk_shades"
-          v-for="(color, index) in singleProduct.colors"
-          :key="index"
-        >
-          <div
-            class="mk_color_shades"
-            :style="{ backgroundColor: color.hex_value }"
-          >
+        <div class="mk_shades" v-for="(color, index) in singleProduct.colors" :key="index">
+          <div class="mk_color_shades" :style="{ backgroundColor: color.hex_value }">
             <!-- TONALITà DISPONIBILI -->
           </div>
           <p>{{ color.name }}</p>
@@ -61,9 +55,30 @@ export default {
     return {
       store,
       singleProduct: null,
+      
     };
   },
   methods: {
+    addtoCart() {
+
+      let defaultquantity = 1;
+
+      let cartItem = store.cartData.find(i => i.id === this.singleProduct.id);
+      if (cartItem) {
+        cartItem.quantity++
+      } else {
+        store.cartData.push({
+          ...this.singleProduct,
+          quantity: defaultquantity
+        })
+      }
+
+      localStorage.setItem(`cart`, JSON.stringify(store.cartData));
+
+
+
+      // console.log(store.shoppingCart);
+    },
     callSingleProduct() {
       axios
         .get(`${store.apiBaseUrl}/products/${this.$route.params.slug}`)
@@ -75,11 +90,12 @@ export default {
             // console.log(this.$router);
             this.$router.push({ name: "not-found" });
           }
-          console.log(this.singleProduct);
+          // console.log(this.singleProduct);
         });
     },
   },
   mounted() {
+    
     this.callSingleProduct();
     window.scrollTo(0, 0);
   },
